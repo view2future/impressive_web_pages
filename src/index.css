@@ -1,78 +1,77 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 :root {
-  --t-bg: #fffbf5;
-  --t-card: #ffffff;
-  --t-text: #1e293b;
-  --t-muted: #64748b;
-  --t-border: #1e293b;
-  --t-accent: #3b82f6;
-  --t-accent-fg: #ffffff;
-  
-  --t-high-bg: #ffedd5;
-  --t-high-text: #9a3412;
-  --t-high-accent: #f97316;
-  
-  --shadow-neo: 6px 6px 0px 0px #1e293b;
+  --brutal-yellow: #faff00;
+  --brutal-pink: #ff00ff;
+  --brutal-cyan: #00ffff;
+  --brutal-border: 3px;
+  --brutal-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+  --brutal-shadow-hover: 4px 4px 0px 0px rgba(0,0,0,1);
 }
 
-.theme-business {
-  --t-bg: #f8fafc;
-  --t-card: #ffffff;
-  --t-text: #0f172a;
-  --t-muted: #64748b;
-  --t-border: #cbd5e1;
-  --t-accent: #2563eb;
-  --t-accent-fg: #ffffff;
-  --t-high-bg: #1e3a8a;
-  --t-high-text: #ffffff;
-  --t-high-accent: #facc15;
-  --shadow-neo: 0 4px 6px -1px rgba(0,0,0,0.1);
+@layer base {
+  body {
+    background-color: #f0f0f0;
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 30px 30px;
+    font-family: 'Inter', sans-serif;
+    @apply text-black antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    @apply uppercase tracking-tighter;
+  }
 }
 
-.theme-dark {
-  --t-bg: #09090b;
-  --t-card: #18181b;
-  --t-text: #ffffff;
-  --t-muted: #a1a1aa;
-  --t-border: #27272a;
-  --t-accent: #bef264;
-  --t-accent-fg: #000000;
-  --t-high-bg: #27272a;
-  --t-high-text: #bef264;
-  --t-high-accent: #bef264;
-  --shadow-neo: 0 0 20px rgba(0, 0, 0, 0.5);
+@layer components {
+  .brutal-card {
+    @apply bg-white border-[var(--brutal-border)] border-black;
+    box-shadow: var(--brutal-shadow);
+    transition: all 0.2s ease;
+  }
+
+  .brutal-card:hover {
+    transform: translate(4px, 4px);
+    box-shadow: var(--brutal-shadow-hover);
+  }
+
+  .brutal-btn {
+    @apply px-6 py-3 font-black uppercase border-[var(--brutal-border)] border-black transition-all;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  }
+
+  .brutal-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  }
+
+  .tag {
+    @apply px-2 py-1 border-2 border-black font-bold text-xs uppercase inline-block mr-2 mb-2;
+  }
 }
 
-@theme {
-  --color-t-bg: var(--t-bg);
-  --color-t-card: var(--t-card);
-  --color-t-text: var(--t-text);
-  --color-t-muted: var(--t-muted);
-  --color-t-border: var(--t-border);
-  --color-t-accent: var(--t-accent);
-  --color-t-accent-fg: var(--t-accent-fg);
-  --color-t-high-bg: var(--t-high-bg);
-  --color-t-high-text: var(--t-high-text);
-  --color-t-high-accent: var(--t-high-accent);
-  --shadow-neo: var(--shadow-neo);
+/* 科技风覆盖 */
+body.tech {
+  background-color: #000;
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  color: #0f0;
 }
-
-body {
-  background-color: var(--t-bg);
-  color: var(--t-text);
-  font-family: "Inter", sans-serif;
+body.tech .brutal-card {
+  @apply bg-black border-green-500;
+  box-shadow: 8px 8px 0px 0px #0f0;
+  color: #0f0;
 }
+body.tech h1, body.tech h2 { color: #0f0; }
 
-.bg-white\/5 { background-color: rgba(255, 255, 255, 0.05) !important; }
-.bg-white\/10 { background-color: rgba(255, 255, 255, 0.1) !important; }
-
-.noise-overlay::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  opacity: 0.015;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+/* 商务风覆盖 */
+body.business {
+  background-image: none;
+  background-color: #fff;
+}
+body.business .brutal-card {
+  @apply border-gray-800 shadow-none rounded-none;
+  box-shadow: 12px 12px 0px 0px #f3f4f6;
 }
