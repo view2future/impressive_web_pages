@@ -3,7 +3,7 @@ import { type ProfileData } from "../data";
 
 const Education: React.FC<{ data: ProfileData }> = ({ data }) => {
   return (
-    <div className="brutal-card bg-[var(--brutal-pink)] p-8">
+    <div className="brutal-card bg-[var(--brutal-cyan)] p-8">
       <h3 className="text-3xl font-black mb-6 border-b-4 border-black pb-2 uppercase">{data.labels.education}</h3>
       <div className="space-y-6">
         {data.education.map((edu, index) => (

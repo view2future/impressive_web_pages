@@ -25,18 +25,18 @@ export interface ProfileData {
     linkedin: string;
   };
   summary: string;
+  highlights: string[];
   experiences: Experience[];
   education: Education[];
   personalSummary: string[];
-  interests: string[];
   labels: {
     workHistory: string;
     contact: string;
     education: string;
-    interests: string;
     industryExp: string;
     years: string;
     proFile: string;
+    highlights: string;
   };
 }
 
@@ -51,6 +51,7 @@ export const translations: Record<string, ProfileData> = {
     },
     summary:
       "经验丰富的领导者，在 AI、Web3、元宇宙、区块链、物联网、智能芯片、车联网、信息技术和软件服务行业有 20 年的工作经验。致力于利用百度尖端的 AI 和 LLM（大语言模型）技术来实现变革性的业务解决方案。",
+    highlights: ["20年+ 行业深耕", "大模型运营部 (BMO)", "文心大模型 (ERNIE)", "飞桨 (PaddlePaddle)", "ToB 数字化专家", "车联网先行者"],
     experiences: [
       {
         title: "西南区域总经理",
@@ -76,7 +77,7 @@ export const translations: Record<string, ProfileData> = {
         logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/baidu.svg",
         tags: ["元宇宙", "Web3", "物联网", "智能芯片", "ARM云"],
         description: [
-          "深入了解百度 AI、元宇宙、Web3、物联网等服务和产品能力。",
+          "深入了解百度 AI、元宇宙、Web3、物联网等服务 and 产品能力。",
           "针对垂直行业痛点，形成具有百度优势与特点的行业解决方案。",
           "与销售团队协作，进行售前交流，掌握客户需求并针对性提出解决方案，合作完成项目签约。",
         ],
@@ -86,7 +87,7 @@ export const translations: Record<string, ProfileData> = {
         company: "上海钛捷信息科技有限公司",
         period: "2017年4月 — 2021年4月",
         location: "上海",
-        specialColor: "bg-[#FFD700]", // 特殊金色
+        specialColor: "bg-[var(--brutal-yellow)]", // 换个底色
         tags: ["数字化转型", "ToB", "汽车分时租赁", "订阅制服务"],
         description: [
           "为企业客户 (ToB) 提供数字化解决方案，服务于一汽-大众、香港环亚机场服务管理集团等头部客户。",
@@ -139,15 +140,14 @@ export const translations: Record<string, ProfileData> = {
       "善于以价值驱动获取客户信任，帮助客户成功。",
       "持续思考产品的核心价值与商业前景，并积极推动革新。",
     ],
-    interests: ["阅读", "音乐", "体育"],
     labels: {
       workHistory: "工作经历",
       contact: "联系方式",
       education: "教育背景",
-      interests: "兴趣爱好",
       industryExp: "行业经验",
       years: "20年+",
       proFile: "个人档案",
+      highlights: "核心亮点",
     },
   },
   en: {
@@ -160,6 +160,7 @@ export const translations: Record<string, ProfileData> = {
     },
     summary:
       "Experienced leader with 20 years of experience in AI, Web3, Metaverse, Blockchain, IoT, and Software Services. Focused on leveraging Baidu's cutting-edge AI & LLM technologies.",
+    highlights: ["20+ Years Experience", "Big Model Ops (BMO)", "ERNIE LLM", "PaddlePaddle", "ToB Digitalization", "Telematics Expert"],
     experiences: [
       {
         title: "GM of Southwest Region",
@@ -193,7 +194,7 @@ export const translations: Record<string, ProfileData> = {
         company: "Taijie Technology",
         period: "Apr 2017 — Apr 2021",
         location: "Shanghai",
-        specialColor: "bg-[#FFD700]",
+        specialColor: "bg-[var(--brutal-yellow)]",
         tags: ["Digitalization", "ToB", "Car Sharing", "Subscription"],
         description: [
           "Provided digital solutions for ToB clients like FAW-Volkswagen and Plaza Premium Group.",
@@ -243,15 +244,14 @@ export const translations: Record<string, ProfileData> = {
       "Cross-domain experience from tech to product to management.",
       "Value-driven approach to win customer trust.",
     ],
-    interests: ["Reading", "Music", "Sports"],
     labels: {
       workHistory: "WORK HISTORY",
       contact: "CONTACT",
       education: "EDUCATION",
-      interests: "INTERESTS",
       industryExp: "INDUSTRY EXP",
       years: "20+ YEARS",
       proFile: "PRO FILE",
+      highlights: "HIGHLIGHTS",
     },
   },
 };

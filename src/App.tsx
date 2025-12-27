@@ -4,7 +4,7 @@ import Summary from "./components/Summary";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import PersonalSummary from "./components/PersonalSummary";
-import Interests from "./components/Interests";
+import Highlights from "./components/Highlights";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import { translations } from "./data";
@@ -47,6 +47,9 @@ function App() {
         {/* 名字与标题 */}
         <div className="lg:col-span-3">
           <Header data={data} />
+          
+          <Highlights data={data} />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Summary data={data} />
             <PersonalSummary data={data} />
@@ -61,10 +64,9 @@ function App() {
         </div>
         <div className="space-y-12">
           <Education data={data} />
-          <Interests data={data} />
           
           {/* 装饰性卡片 */}
-          <div className="brutal-card bg-[var(--brutal-yellow)] p-8 text-center rotate-3 hover:rotate-0">
+          <div className="brutal-card bg-[var(--brutal-pink)] p-8 text-center rotate-3 hover:rotate-0">
             <h2 className="text-4xl font-black uppercase">{data.labels.years}</h2>
             <p className="text-xl font-bold uppercase">{data.labels.industryExp}</p>
           </div>
