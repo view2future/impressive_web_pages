@@ -16,6 +16,12 @@ export interface Education {
   period: string;
 }
 
+export interface CareerProfile {
+  industries: string[];
+  trajectory: string[];
+  summary: string;
+}
+
 export interface ProfileData {
   name: string;
   title: string;
@@ -26,6 +32,7 @@ export interface ProfileData {
   };
   summary: string;
   highlights: string[];
+  careerProfile: CareerProfile;
   experiences: Experience[];
   education: Education[];
   personalSummary: string[];
@@ -37,6 +44,7 @@ export interface ProfileData {
     years: string;
     proFile: string;
     highlights: string;
+    careerProfile: string;
   };
 }
 
@@ -50,8 +58,13 @@ export const translations: Record<string, ProfileData> = {
       linkedin: "https://www.linkedin.com/in/view2future/",
     },
     summary:
-      "经验丰富的领导者，在 AI、Web3、元宇宙、区块链、物联网、智能芯片、车联网、信息技术和软件服务行业有 20 年的工作经验。致力于利用百度尖端的 AI 和 LLM（大语言模型）技术来实现变革性的业务解决方案。",
+      "经验丰富的领导者，在 AI、Web3、元宇宙、区块链、物联网、智能芯片、车联网、信息技术和软件服务行业有 20 年的工作经验。致力于利用百度尖端的 AI 和文心大模型 (ERNIE) 技术来实现变革性的业务解决方案。",
     highlights: ["20年+ 行业深耕", "大模型运营部 (BMO)", "文心大模型 (ERNIE)", "飞桨 (PaddlePaddle)", "ToB 数字化专家", "车联网先行者"],
+    careerProfile: {
+      industries: ["AI 大模型", "车联网 (Telematics)", "ToB 数字化解决方案", "移动通信", "智慧教育"],
+      trajectory: ["软件工程师", "高级开发主任", "产品总监", "CEO / 创始人", "解决方案架构师", "西南区域总经理"],
+      summary: "从底层嵌入式开发起步，历经摩托罗拉、三星等跨国企业的技术锤炼，逐步转型为定义产品的战略家与带领团队的 CEO。目前深耕百度 AI 生态，致力于将文心大模型与飞桨平台的能力转化为企业级生产力。"
+    },
     experiences: [
       {
         title: "西南区域总经理",
@@ -60,11 +73,11 @@ export const translations: Record<string, ProfileData> = {
         location: "北京/成都",
         isHighlight: true,
         logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/baidu.svg",
-        tags: ["AI技术生态", "大模型落地", "业务发展", "文心一言", "飞桨"],
+        tags: ["AI技术生态", "大模型落地", "业务发展", "文心大模型", "飞桨"],
         description: [
           "负责百度 AI 技术平台 (AIT) 下的大模型运营部 (BMO) 西南区域业务。",
           "致力于促进与企业、大学、研究机构以及个人开发者的合作，推动文心大模型与飞桨生态的深度融合。",
-          "技术采用：推动客户采用百度前沿的 AI 和 LLM，提升客户在人工智能时代的业务能力。",
+          "技术采用：推动客户采用百度前沿的 AI 和文心大模型，提升客户在人工智能时代的业务能力。",
           "协同创新：基于文心大模型 (ERNIE) 的能力，积极寻求与外部合作伙伴共同创造创新产品的机会。",
         ],
       },
@@ -78,7 +91,7 @@ export const translations: Record<string, ProfileData> = {
         tags: ["元宇宙", "Web3", "物联网", "智能芯片", "ARM云"],
         description: [
           "深入了解百度 AI、元宇宙、Web3、物联网等服务 and 产品能力。",
-          "针对垂直行业痛点，形成具有百度优势与特点的行业解决方案。",
+          "针对垂直行业痛点，形成具有百度优势与特点保持行业竞争力。",
           "与销售团队协作，进行售前交流，掌握客户需求并针对性提出解决方案，合作完成项目签约。",
         ],
       },
@@ -87,7 +100,8 @@ export const translations: Record<string, ProfileData> = {
         company: "上海钛捷信息科技有限公司",
         period: "2017年4月 — 2021年4月",
         location: "上海",
-        specialColor: "bg-[var(--brutal-yellow)]", // 换个底色
+        specialColor: "bg-[var(--brutal-yellow)]",
+        isHighlight: true,
         tags: ["数字化转型", "ToB", "汽车分时租赁", "订阅制服务"],
         description: [
           "为企业客户 (ToB) 提供数字化解决方案，服务于一汽-大众、香港环亚机场服务管理集团等头部客户。",
@@ -112,10 +126,11 @@ export const translations: Record<string, ProfileData> = {
         company: "INQ 移动 / 摩托罗拉",
         period: "2005年1月 — 2011年12月",
         location: "北京",
+        isHighlight: true,
         tags: ["移动通信", "Android/ROM", "UI/UX", "国际化"],
         description: [
           "在摩托罗拉和 INQ 移动领导手机产品的本地化、国际化与 UI/UX 研发。",
-          "专注于社交手机研发与 ROM 生态打造。",
+          "参与下一代操作系统的研发项目启动工作。",
         ],
       },
       {
@@ -141,13 +156,14 @@ export const translations: Record<string, ProfileData> = {
       "持续思考产品的核心价值与商业前景，并积极推动革新。",
     ],
     labels: {
-      workHistory: "工作经历",
+      workHistory: "履职历程",
       contact: "联系方式",
       education: "教育背景",
       industryExp: "行业经验",
       years: "20年+",
       proFile: "个人档案",
       highlights: "核心亮点",
+      careerProfile: "职业画像",
     },
   },
   en: {
@@ -159,8 +175,13 @@ export const translations: Record<string, ProfileData> = {
       linkedin: "https://www.linkedin.com/in/view2future/",
     },
     summary:
-      "Experienced leader with 20 years of experience in AI, Web3, Metaverse, Blockchain, IoT, and Software Services. Focused on leveraging Baidu's cutting-edge AI & LLM technologies.",
-    highlights: ["20+ Years Experience", "Big Model Ops (BMO)", "ERNIE LLM", "PaddlePaddle", "ToB Digitalization", "Telematics Expert"],
+      "Experienced leader with 20 years of experience in AI, Web3, Metaverse, Blockchain, IoT, and Software Services. Focused on leveraging Baidu's cutting-edge AI & ERNIE Large Model technologies.",
+    highlights: ["20+ Years Experience", "Big Model Ops (BMO)", "ERNIE Large Model", "PaddlePaddle", "ToB Digitalization", "Telematics Expert"],
+    careerProfile: {
+      industries: ["AI & LLM", "Telematics (TSP)", "ToB Digitalization", "Mobile Comm", "Smart Education"],
+      trajectory: ["Software Engineer", "Sr Dev Lead", "Product Director", "CEO / Founder", "Solution Architect", "General Manager"],
+      summary: "Started from embedded development, polished at Motorola & Samsung, and transitioned into a strategic product leader and CEO. Currently expanding Baidu's AI ecosystem."
+    },
     experiences: [
       {
         title: "GM of Southwest Region",
@@ -169,10 +190,10 @@ export const translations: Record<string, ProfileData> = {
         location: "Beijing/Chengdu",
         isHighlight: true,
         logo: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/baidu.svg",
-        tags: ["AI Ecosystem", "LLM Implementation", "Business Dev", "ERNIE", "PaddlePaddle"],
+        tags: ["AI Ecosystem", "Big Model", "Business Dev", "ERNIE", "PaddlePaddle"],
         description: [
           "In charge of BMO Southwest business under Baidu's AI Technology Platform (AIT).",
-          "Promoting cooperation with enterprises and universities to leverage Baidu's AI/LLM technologies.",
+          "Promoting cooperation with enterprises and universities to leverage Baidu's AI/ERNIE technologies.",
           "Seeking opportunities to co-create innovative products based on ERNIE advances.",
         ],
       },
@@ -194,6 +215,7 @@ export const translations: Record<string, ProfileData> = {
         company: "Taijie Technology",
         period: "Apr 2017 — Apr 2021",
         location: "Shanghai",
+        isHighlight: true,
         specialColor: "bg-[var(--brutal-yellow)]",
         tags: ["Digitalization", "ToB", "Car Sharing", "Subscription"],
         description: [
@@ -217,6 +239,7 @@ export const translations: Record<string, ProfileData> = {
         company: "INQ Mobile / Motorola",
         period: "Jan 2005 — Dec 2011",
         location: "Beijing",
+        isHighlight: true,
         tags: ["Mobile", "Android/ROM", "UI/UX", "I18n"],
         description: [
           "Led software product delivery for Motorola mobile phones.",
@@ -245,13 +268,14 @@ export const translations: Record<string, ProfileData> = {
       "Value-driven approach to win customer trust.",
     ],
     labels: {
-      workHistory: "WORK HISTORY",
+      workHistory: "CAREER TIMELINE",
       contact: "CONTACT",
       education: "EDUCATION",
       industryExp: "INDUSTRY EXP",
       years: "20+ YEARS",
       proFile: "PRO FILE",
       highlights: "HIGHLIGHTS",
+      careerProfile: "PROFILE OVERVIEW",
     },
   },
 };

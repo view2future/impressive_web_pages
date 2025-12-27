@@ -3,15 +3,17 @@ import { type ProfileData } from "../data";
 
 const Education: React.FC<{ data: ProfileData }> = ({ data }) => {
   return (
-    <div className="brutal-card bg-[var(--brutal-cyan)] p-8">
-      <h3 className="text-3xl font-black mb-6 border-b-4 border-black pb-2 uppercase">{data.labels.education}</h3>
+    <div className="geek-card p-6">
+      <h3 className="text-xs font-mono text-[var(--geek-cyan)] mb-6 border-b border-gray-800 pb-2 tracking-widest">
+        // {data.labels.education}
+      </h3>
       <div className="space-y-6">
         {data.education.map((edu, index) => (
-          <div key={index}>
-            <h4 className="text-xl font-black">{edu.school}</h4>
-            <p className="font-bold text-lg">{edu.degree}</p>
-            <span className="bg-black text-white px-2 py-0.5 text-sm font-black mt-2 inline-block">
-              {edu.period}
+          <div key={index} className="border-l-2 border-gray-800 pl-4 py-1">
+            <h4 className="text-sm font-black text-white">{edu.school}</h4>
+            <p className="font-mono text-xs text-gray-400 mt-1">{edu.degree}</p>
+            <span className="text-[10px] font-mono text-[var(--geek-cyan)] opacity-70 mt-2 block">
+              [{edu.period}]
             </span>
           </div>
         ))}

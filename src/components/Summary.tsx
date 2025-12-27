@@ -3,8 +3,9 @@ import { type ProfileData } from "../data";
 
 const Summary: React.FC<{ data: ProfileData }> = ({ data }) => {
   return (
-    <div className="brutal-card bg-white p-8">
-      <p className="text-xl font-bold leading-relaxed">
+    <div className="geek-card p-6 border-t-4 border-t-[var(--geek-cyan)]">
+      <div className="text-[10px] font-mono text-gray-500 mb-2">// EXEC_SUMMARY</div>
+      <p className="text-sm font-mono text-gray-200 leading-relaxed tracking-tight">
         {data.summary}
       </p>
     </div>

@@ -7,22 +7,26 @@ interface LanguageSwitcherProps {
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ lang, setLang }) => {
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-2">
+    <div className="flex gap-2 font-mono">
       <button
         onClick={() => setLang("zh")}
-        className={`brutal-btn px-3 py-1 text-sm font-black transition-colors ${
-          lang === "zh" ? "bg-black text-white" : "bg-white text-black"
+        className={`px-3 py-1 text-[10px] border transition-all ${
+          lang === "zh" 
+            ? "bg-[var(--geek-accent)] text-black border-[var(--geek-accent)]" 
+            : "bg-transparent text-gray-500 border-gray-800 hover:border-gray-600"
         }`}
       >
-        中
+        [ZH]
       </button>
       <button
         onClick={() => setLang("en")}
-        className={`brutal-btn px-3 py-1 text-sm font-black transition-colors ${
-          lang === "en" ? "bg-black text-white" : "bg-white text-black"
+        className={`px-3 py-1 text-[10px] border transition-all ${
+          lang === "en" 
+            ? "bg-[var(--geek-accent)] text-black border-[var(--geek-accent)]" 
+            : "bg-transparent text-gray-500 border-gray-800 hover:border-gray-600"
         }`}
       >
-        EN
+        [EN]
       </button>
     </div>
   );

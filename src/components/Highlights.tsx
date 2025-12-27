@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 
 const Highlights: React.FC<{ data: ProfileData }> = ({ data }) => {
   return (
-    <div className="flex flex-wrap gap-4 mb-8">
+    <div className="flex flex-wrap gap-3 mb-8">
       {data.highlights.map((highlight, index) => (
         <motion.div
           key={index}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: index * 0.1 }}
-          whileHover={{ scale: 1.1, rotate: index % 2 === 0 ? 2 : -2 }}
-          className="bg-black text-white px-4 py-2 font-black text-lg border-4 border-black shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:bg-white hover:text-black transition-colors cursor-default"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.05 }}
+          className="bg-[var(--geek-accent-dim)] text-[var(--geek-accent)] px-3 py-1 font-mono text-[10px] border border-[var(--geek-accent-dim)] rounded-sm flex items-center gap-2 group cursor-default"
         >
+          <span className="w-1.5 h-1.5 bg-[var(--geek-accent)] rounded-full group-hover:animate-ping"></span>
           {highlight}
         </motion.div>
       ))}
