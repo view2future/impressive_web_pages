@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 
 # Configuration
@@ -31,3 +32,6 @@ fi
 echo "🚀 Starting the project on port $PORT..."
 # Start the project using npm run dev and passing the port argument
 npm run dev -- --port $PORT
+=======
+npm run dev
+>>>>>>> b91310a8e4c32f9bac7cdb03a61469a4f9947eb1

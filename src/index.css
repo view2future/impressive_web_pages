@@ -1,5 +1,7 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
+<<<<<<< HEAD
 @layer base {
   body {
     @apply antialiased;
@@ -42,3 +44,91 @@
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+=======
+:root {
+  --geek-bg: #08090d;
+  --geek-card: rgba(10, 11, 16, 0.85);
+  --geek-accent: #00ff41; 
+  --geek-accent-dim: rgba(0, 255, 65, 0.1);
+  --geek-cyan: #00f3ff;
+  --geek-border: 1px;
+}
+
+@layer base {
+  body {
+    background-color: var(--geek-bg);
+    font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', monospace;
+    @apply text-gray-200 antialiased overflow-x-hidden;
+    /* 隐藏默认光标 */
+    cursor: none !important;
+  }
+
+  /* 所有的交互元素也要隐藏光标 */
+  a, button, [role="button"] {
+    cursor: none !important;
+  }
+
+  h1, h2, h3 {
+    font-family: 'JetBrains Mono', monospace;
+    @apply uppercase tracking-wider;
+  }
+}
+
+@layer components {
+  .geek-card {
+    @apply bg-[var(--geek-card)] border border-gray-800 relative backdrop-blur-md;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .geek-card:hover {
+    @apply border-gray-500;
+    box-shadow: 0 0 30px var(--geek-accent-dim);
+  }
+
+  .geek-btn {
+    @apply px-5 py-2.5 font-black uppercase border border-[var(--geek-accent)] text-[var(--geek-accent)] transition-all relative overflow-hidden text-sm;
+    background: transparent;
+  }
+
+  .geek-btn:hover {
+    background: var(--geek-accent);
+    @apply text-black shadow-[0_0_30px_#00ff41];
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px var(--geek-accent-dim);
+  }
+}
+
+/* 动态流光线条动画 */
+@keyframes flow {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* 方案2: 侧边代码流动画 */
+@keyframes code-fall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.code-gutter-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  user-select: none;
+  animation: code-fall 20s linear infinite;
+}
+
+@keyframes scroll-fast {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-fast {
+  animation: scroll-fast 30s linear infinite;
+}
+
+
+>>>>>>> b91310a8e4c32f9bac7cdb03a61469a4f9947eb1
