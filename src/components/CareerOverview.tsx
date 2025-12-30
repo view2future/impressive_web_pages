@@ -1,7 +1,6 @@
 import React from "react";
 import { type ProfileData } from "../data";
-import { motion } from "framer-motion";
-import { Globe, Briefcase, TrendingUp } from "lucide-react";
+import { Globe, TrendingUp } from "lucide-react";
 
 const CareerOverview: React.FC<{ data: ProfileData }> = ({ data }) => {
   const { careerProfile, labels } = data;
