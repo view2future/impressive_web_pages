@@ -1,7 +1,10 @@
 import React from "react";
 import { type ProfileData } from "../data";
 import { motion } from "framer-motion";
-import { Linkedin, Mail, Phone, Cpu } from "lucide-react";
+import Linkedin from "lucide-react/icons/linkedin";
+import Mail from "lucide-react/icons/mail";
+import Phone from "lucide-react/icons/phone";
+import Cpu from "lucide-react/icons/cpu";
 
 const Header: React.FC<{ data: ProfileData }> = ({ data }) => {
   const { name, title, contact, labels } = data;

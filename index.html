@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/src/assets/profile.jpg" fetchpriority="high" />
     <link
       href="https://fonts.googleapis.com/css2?family=Impact&family=Inter:wght@400;770&family=Roboto+Mono&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
     <title>王宇 | 个人主页 & 职业简历</title>
+    <style>
+      /* Critical CSS - above the fold */
+      :root {
+        --geek-accent: #00ff88;
+        --geek-accent-dim: rgba(0, 255, 136, 0.1);
+        --geek-cyan: #00d4ff;
+      }
+      body { background: #08090d; color: #fff; font-family: 'Roboto Mono', monospace; margin: 0; padding: 0; }
+      .min-h-screen { min-height: 100vh; }
+      #root { display: flex; min-height: 100vh; }
+    </style>
   </head>
   <body class="noise-overlay">
     <div id="root"></div>

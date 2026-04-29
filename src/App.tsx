@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import Header from "./components/Header";
 import Summary from "./components/Summary";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import PersonalSummary from "./components/PersonalSummary";
 import Highlights from "./components/Highlights";
-import CareerOverview from "./components/CareerOverview";
 import LanguageSwitcher from "./components/LanguageSwitcher";
-import CustomCursor from "./components/CustomCursor";
-import GeekBackground from "./components/GeekBackground";
 import { translations } from "./data";
 import profileImage from "./assets/profile.jpg";
 import { motion } from "framer-motion";
+
+const CareerOverview = lazy(() => import("./components/CareerOverview"));
+const CustomCursor = lazy(() => import("./components/CustomCursor"));
+const GeekBackground = lazy(() => import("./components/GeekBackground"));
 
 const RealTimeClock = () => {
   const [time, setTime] = useState(new Date());
@@ -69,8 +70,10 @@ function App() {
 
   return (
     <div className="min-h-screen p-4 md:p-10 max-w-7xl mx-auto relative bg-[#08090d]">
-      <CustomCursor />
-      <GeekBackground />
+      <Suspense fallback={null}>
+        <CustomCursor />
+        <GeekBackground />
+      </Suspense>
       <SystemStatusGutter lang={lang} />
       
       <div className="relative z-10 pb-20">
@@ -109,7 +112,9 @@ function App() {
         </div>
 
         {/* 职业画像全景 */}
-        <CareerOverview data={data} />
+        <Suspense fallback={<div className="h-48 animate-pulse bg-gray-900/50 rounded mb-16"></div>}>
+          <CareerOverview data={data} />
+        </Suspense>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* 工作经历扩容 */}
