@@ -12,15 +12,8 @@ export default defineConfig(({ command }) => ({
   build: {
     assetsInlineLimit: 10000000,
     cssCodeSplit: false,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion'],
+    include: ['react', 'react-dom', 'framer-motion', 'lucide-react'],
   },
 }))
