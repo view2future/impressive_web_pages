@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export const resumeData = {
   name: "吴 斌",
   englishName: "Shally Wu",
@@ -44,7 +43,7 @@ export const resumeData = {
     "投后增值服务",
   ],
 };
-=======
+
 export interface Experience {
   title: string;
   company: string;
@@ -110,7 +109,7 @@ export const translations: Record<string, ProfileData> = {
     careerProfile: {
       industries: ["AI 大模型", "车联网 (Telematics)", "ToB 数字化解决方案", "移动通信", "智慧教育"],
       trajectory: ["软件工程师", "高级开发主任", "产品总监", "CEO / 创始人", "解决方案架构师", "西南区域总经理"],
-      summary: "从底层嵌入式开发起步，历经摩托罗拉、三星等跨国企业的技术锤炼，逐步转型为定义产品的战略家与带领团队的 CEO。目前深耕百度 AI 生态，致力于将文心大模型与飞桨平台的能力转化为企业级生产力。"
+      summary: "从底层嵌入式开发起步，历经 Motorola、三星等跨国企业的技术锤炼，逐步转型为定义产品的战略家与带领团队的 CEO。目前深耕百度 AI 生态，致力于将文心大模型与飞桨平台的能力转化为企业级生产力。"
     },
     experiences: [
       {
@@ -152,7 +151,7 @@ export const translations: Record<string, ProfileData> = {
         tags: ["数字化转型", "ToB", "汽车分时租赁", "订阅制服务"],
         description: [
           "为企业客户 (ToB) 提供数字化解决方案，服务于一汽-大众、香港环亚机场服务管理集团等头部客户。",
-          "打造“摩捷出行”产品，实现班车运营成本降低 15% 以上。",
+          "打造"摩捷出行"产品，实现班车运营成本降低 15% 以上。",
           "为环亚机场提供全球 46 个国家机场的贵宾服务系统建设和运维。",
         ],
       },
@@ -164,19 +163,19 @@ export const translations: Record<string, ProfileData> = {
         tags: ["移动互联网", "车联网", "教育行业", "产品定义"],
         description: [
           "在车联网和教育行业担任产品领导职务。",
-          "开发国内第一代车联网后装产品“粤行者”TSP。",
+          "开发国内第一代车联网后装产品"粤行者"TSP。",
           "2013 年实现微信信号与车载导航结合，获得专利 CN105407126A。",
         ],
       },
       {
         title: "高级开发主任 / 高级软件工程师",
-        company: "INQ 移动 / 摩托罗拉",
+        company: "INQ 移动 /  Motorola",
         period: "2005年1月 — 2011年12月",
         location: "北京",
         isHighlight: true,
-        tags: ["移动通信", "Android/ROM", "UI/UX", "国际化"],
+        tags: ["移动通���", "Android/ROM", "UI/UX", "国际化"],
         description: [
-          "在摩托罗拉和 INQ 移动领导手机产品的本地化、国际化与 UI/UX 研发。",
+          "在 Motorola 和 INQ 移动领导手机产品的本地化、国际化与 UI/UX 研发。",
           "参与下一代操作系统的研发项目启动工作。",
         ],
       },
@@ -326,4 +325,3 @@ export const translations: Record<string, ProfileData> = {
     },
   },
 };
->>>>>>> b91310a8e4c32f9bac7cdb03a61469a4f9947eb1
