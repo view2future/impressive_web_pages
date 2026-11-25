@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="/src/assets/profile.jpg" fetchpriority="high" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Impact&family=Inter:wght@400;770&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
+    <meta name="theme-color" content="#1B202B" />
+    <meta
+      name="description"
+      content="王宇 · 百度大模型运营部西南区域负责人。20 年 AI、云计算、车联网与 ToB 产品经验。"
     />
     <title>王宇 | 个人主页 & 职业简历</title>
     <style>
-      /* Critical CSS - above the fold */
+      /* Critical CSS — matches the Motus AI stage tokens to avoid a flash */
       :root {
-        --geek-accent: #00ff88;
-        --geek-accent-dim: rgba(0, 255, 136, 0.1);
-        --geek-cyan: #00d4ff;
+        --bg: #1b202b;
+        --text: #f7f6f2;
+        --accent: #e85d3d;
       }
-      body { background: #08090d; color: #fff; font-family: 'Roboto Mono', monospace; margin: 0; padding: 0; }
-      .min-h-screen { min-height: 100vh; }
-      #root { display: flex; min-height: 100vh; }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Avenir Next", "SF Pro Display", "PingFang SC",
+          "Microsoft YaHei", system-ui, sans-serif;
+      }
+      #root {
+        min-height: 100vh;
+      }
     </style>
   </head>
-  <body class="noise-overlay">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

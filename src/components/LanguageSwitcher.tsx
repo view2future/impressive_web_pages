@@ -5,28 +5,27 @@ interface LanguageSwitcherProps {
   setLang: (lang: "zh" | "en") => void;
 }
 
-const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ lang, setLang }) => {
+const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
+  lang,
+  setLang,
+}) => {
   return (
-    <div className="flex gap-2 font-mono">
+    <div className="lang-switch" role="group" aria-label="Language">
       <button
+        type="button"
+        className={lang === "zh" ? "is-active" : ""}
+        aria-pressed={lang === "zh"}
         onClick={() => setLang("zh")}
-        className={`px-3 py-1 text-[10px] border transition-all ${
-          lang === "zh" 
-            ? "bg-[var(--geek-accent)] text-black border-[var(--geek-accent)]" 
-            : "bg-transparent text-gray-500 border-gray-800 hover:border-gray-600"
-        }`}
       >
-        [ZH]
+        ZH
       </button>
       <button
+        type="button"
+        className={lang === "en" ? "is-active" : ""}
+        aria-pressed={lang === "en"}
         onClick={() => setLang("en")}
-        className={`px-3 py-1 text-[10px] border transition-all ${
-          lang === "en" 
-            ? "bg-[var(--geek-accent)] text-black border-[var(--geek-accent)]" 
-            : "bg-transparent text-gray-500 border-gray-800 hover:border-gray-600"
-        }`}
       >
-        [EN]
+        EN
       </button>
     </div>
   );
