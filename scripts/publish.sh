@@ -5,6 +5,10 @@ cd "$(dirname "$0")/.."
 
 bun run build
 
+# Base the deployment on the current remote gh-pages (GitHub may add CNAME commits).
+git fetch origin gh-pages
+REMOTE_SHA="$(git rev-parse FETCH_HEAD)"
+
 TMP_DIR="$(mktemp -d)"
 cleanup() {
   git worktree remove --force "$TMP_DIR" >/dev/null 2>&1 || true
@@ -12,7 +16,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-git worktree add --detach "$TMP_DIR" gh-pages >/dev/null
+git worktree add --detach "$TMP_DIR" "$REMOTE_SHA" >/dev/null
 cp dist/index.html "$TMP_DIR/index.html"
 cd "$TMP_DIR"
 git add index.html
